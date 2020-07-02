@@ -15,9 +15,7 @@ public abstract class Game {
         this.player = player;
     }
 
-    public Map<String, Integer> getHighScore() {
-        return sortByValue(highScore);
-    }
+    public abstract Map<String, Integer> getHighScore();
 
     public void addHighScore(int score) {
         if (highScore.get(this.player.getName()) == null) {
@@ -61,7 +59,7 @@ public abstract class Game {
             public int compare(Map.Entry<String, Integer> o1,
                                Map.Entry<String, Integer> o2)
             {
-                return (o1.getValue()).compareTo(o2.getValue());
+                return (o2.getValue()).compareTo(o1.getValue());
             }
         });
 

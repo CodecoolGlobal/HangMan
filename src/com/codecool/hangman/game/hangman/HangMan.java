@@ -39,14 +39,14 @@ public class HangMan extends Game {
             countScore();
             this.addHighScore(score);
             this.player.addPlayerScore(score);
-            System.out.println("Correct! You win! The word was " + word + "Your Score is " + score);
+            System.out.println("Correct! You win! The word was " + word + " Your Score is " + score);
             asterisk = word;
             usedLetters.clear();
         } else if (asterisk.equals(word)) {
             countScore();
             this.addHighScore(score);
             this.player.addPlayerScore(score);
-            System.out.println("Correct! You win! The word was " + word + "Your Score is " + score);
+            System.out.println("Correct! You win! The word was " + word + " Your Score is " + score);
             usedLetters.clear();
         }
     }
@@ -55,6 +55,8 @@ public class HangMan extends Game {
     public void chooseTheme() {
         boolean choosedTheme = false;
         Scanner inTheme = new Scanner(System.in);
+        System.out.println("Choose theme!");
+        System.out.println();
         while (!choosedTheme) {
             System.out.println("Cities (0) \nAnimals (1) \nFamous People (2)");
             String diffNum = inTheme.nextLine();
@@ -110,7 +112,7 @@ public class HangMan extends Game {
 
     @Override
     public Map<String, Integer> getHighScore() {
-        return highScore;
+        return sortByValue(highScore);
     }
 
 

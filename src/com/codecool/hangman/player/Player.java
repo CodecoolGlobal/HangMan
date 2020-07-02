@@ -11,13 +11,8 @@ public class Player {
     private Map<String, Integer> playerScores = new TreeMap<>();
     private Game game;
 
-
     public Player(String name) {
         this.name = name;
-    }
-
-    public Game getGame() {
-        return game;
     }
 
     public Map<String, Integer> getPlayerScores() {
